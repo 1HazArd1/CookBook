@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\iMocha.Talent.Analytics.Services.props" />
+</Project>

@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projects\\CookBook\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|c:\\projects\\cookbook\\backend\\domain\\users\\usermaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|solutionrelative:domain\\users\\usermaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserMaster.cs",
+              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Domain\\Users\\UserMaster.cs",
+              "RelativeDocumentMoniker": "Domain\\Users\\UserMaster.cs",
+              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Domain\\Users\\UserMaster.cs",
+              "RelativeToolTip": "Domain\\Users\\UserMaster.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T10:32:15.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Services\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Services\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Services\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T10:31:54.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\Program.cs",
+              "RelativeDocumentMoniker": "Services\\Program.cs",
+              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Services\\Program.cs",
+              "RelativeToolTip": "Services\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T10:20:51.102Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

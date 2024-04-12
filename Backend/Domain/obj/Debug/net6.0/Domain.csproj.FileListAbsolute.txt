@@ -1,0 +1,23 @@
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.deps.json
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.dll
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.pdb
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\iMocha.Talent.Analytics.Domain.dll
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\refint\iMocha.Talent.Analytics.Domain.dll
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\iMocha.Talent.Analytics.Domain.pdb
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Domain\obj\Debug\net6.0\ref\iMocha.Talent.Analytics.Domain.dll
+C:\Projects\CookBook\Backend\Domain\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.deps.json
+C:\Projects\CookBook\Backend\Domain\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.dll
+C:\Projects\CookBook\Backend\Domain\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.pdb
+C:\Projects\CookBook\Backend\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\CookBook\Backend\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Projects\CookBook\Backend\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Projects\CookBook\Backend\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Projects\CookBook\Backend\Domain\obj\Debug\net6.0\iMocha.Talent.Analytics.Domain.dll
+C:\Projects\CookBook\Backend\Domain\obj\Debug\net6.0\refint\iMocha.Talent.Analytics.Domain.dll
+C:\Projects\CookBook\Backend\Domain\obj\Debug\net6.0\iMocha.Talent.Analytics.Domain.pdb
+C:\Projects\CookBook\Backend\Domain\obj\Debug\net6.0\ref\iMocha.Talent.Analytics.Domain.dll

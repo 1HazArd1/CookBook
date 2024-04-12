@@ -1,0 +1,34 @@
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.deps.json
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.dll
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.pdb
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Application.dll
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.dll
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Application.pdb
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.pdb
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\Persistence.csproj.AssemblyReference.cache
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfoInputs.cache
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfo.cs
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\Persistence.csproj.CoreCompileInputs.cache
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\Persistence.csproj.CopyComplete
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\iMocha.Talent.Analytics.Persistence.dll
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\refint\iMocha.Talent.Analytics.Persistence.dll
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\iMocha.Talent.Analytics.Persistence.pdb
+D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\ref\iMocha.Talent.Analytics.Persistence.dll
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.deps.json
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.dll
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.pdb
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Application.dll
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.dll
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Application.pdb
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.pdb
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.csproj.AssemblyReference.cache
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfoInputs.cache
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfo.cs
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persiste.61C28332.Up2Date
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\iMocha.Talent.Analytics.Persistence.dll
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\refint\iMocha.Talent.Analytics.Persistence.dll
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\iMocha.Talent.Analytics.Persistence.pdb
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\ref\iMocha.Talent.Analytics.Persistence.dll
