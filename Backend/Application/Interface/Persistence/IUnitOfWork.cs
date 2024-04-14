@@ -1,4 +1,4 @@
-﻿namespace iMocha.Talent.Analytics.Application.Interface.Persistence
+﻿namespace CookBook.Application.Interface.Persistence
 {
     public interface IUnitOfWork
     {

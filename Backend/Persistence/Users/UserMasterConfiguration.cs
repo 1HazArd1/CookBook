@@ -1,8 +1,8 @@
-﻿using iMocha.Talent.Analytics.Domain.Users;
+﻿using CookBook.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace iMocha.Talent.Analytics.Persistence.Users
+namespace CookBook.Persistence.Users
 {
     public class UserMasterConfiguration : IEntityTypeConfiguration<UserMaster>
     {

@@ -1,6 +1,6 @@
-using iMocha.Talent.Analytics.Services;
-using iMocha.Talent.Analytics.Persistence;
-using iMocha.Talent.Analytics.Application;
+using CookBook.Services;
+using CookBook.Persistence;
+using CookBook.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 

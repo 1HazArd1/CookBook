@@ -1,4 +1,4 @@
-﻿namespace iMocha.Talent.Analytics.Application.Exceptions
+﻿namespace CookBook.Application.Exceptions
 {
     public class NotFoundException : Exception
     {

@@ -1,9 +1,9 @@
-﻿using iMocha.Talent.Analytics.Application.Interface.Persistence.Users;
-using iMocha.Talent.Analytics.Domain.Users;
+﻿using CookBook.Application.Interface.Persistence.Users;
+using CookBook.Domain.Users;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace iMocha.Talent.Analytics.Application.Users
+namespace CookBook.Application.Users
 {
     public record GetUsersByCustomerIdQuery(long CustomerId) : IRequest<List<UserMaster>>;
     public class GetUsersByCustomerIdQueryHandler : IRequestHandler<GetUsersByCustomerIdQuery, List<UserMaster>>

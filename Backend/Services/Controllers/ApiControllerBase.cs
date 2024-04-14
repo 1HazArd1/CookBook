@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace iMocha.Talent.Analytics.Services.Controllers
+namespace CookBook.Services.Controllers
 {
     [ApiController]
     [Route("[controller]")]

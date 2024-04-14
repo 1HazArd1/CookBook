@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>iMocha.Talent.Analytics.Application</AssemblyName>
-    <RootNamespace>iMocha.Talent.Analytics.Application</RootNamespace>
+    <AssemblyName>CookBook.Application</AssemblyName>
+    <RootNamespace>CookBook.Application</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +17,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Models\" />
   </ItemGroup>
 
 </Project>

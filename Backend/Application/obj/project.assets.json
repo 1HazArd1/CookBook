@@ -289,14 +289,14 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "iMocha.Talent.Analytics.Domain/1.0.0": {
+      "CookBook.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/iMocha.Talent.Analytics.Domain.dll": {}
+          "bin/placeholder/CookBook.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/iMocha.Talent.Analytics.Domain.dll": {}
+          "bin/placeholder/CookBook.Domain.dll": {}
         }
       }
     }
@@ -720,7 +720,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "iMocha.Talent.Analytics.Domain/1.0.0": {
+    "CookBook.Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
@@ -728,11 +728,11 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CookBook.Domain >= 1.0.0",
       "FluentValidation.DependencyInjectionExtensions >= 11.6.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.8",
-      "Microsoft.Extensions.DependencyInjection >= 7.0.0",
-      "iMocha.Talent.Analytics.Domain >= 1.0.0"
+      "Microsoft.Extensions.DependencyInjection >= 7.0.0"
     ]
   },
   "packageFolders": {
@@ -743,7 +743,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Projects\\CookBook\\Backend\\Application\\Application.csproj",
-      "projectName": "iMocha.Talent.Analytics.Application",
+      "projectName": "CookBook.Application",
       "projectPath": "C:\\Projects\\CookBook\\Backend\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Projects\\CookBook\\Backend\\Application\\obj\\",

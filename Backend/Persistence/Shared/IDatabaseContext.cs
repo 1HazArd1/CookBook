@@ -1,7 +1,7 @@
-﻿using iMocha.Talent.Analytics.Domain.Common;
+﻿using CookBook.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace iMocha.Talent.Analytics.Persistence.Shared
+namespace CookBook.Persistence.Shared
 {
     public interface IDatabaseContext
     {

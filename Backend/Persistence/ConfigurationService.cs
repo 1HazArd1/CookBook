@@ -1,11 +1,11 @@
-﻿using iMocha.Talent.Analytics.Application.Interface.Persistence.Users;
-using iMocha.Talent.Analytics.Persistence.Shared;
-using iMocha.Talent.Analytics.Persistence.Users;
+﻿using CookBook.Application.Interface.Persistence.Users;
+using CookBook.Persistence.Shared;
+using CookBook.Persistence.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace iMocha.Talent.Analytics.Persistence
+namespace CookBook.Persistence
 {
     public static class ConfigurationService
     {

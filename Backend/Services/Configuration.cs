@@ -1,6 +1,6 @@
-﻿using iMocha.Talent.Analytics.Services.Filters;
+﻿using CookBook.Services.Filters;
 
-namespace iMocha.Talent.Analytics.Services
+namespace CookBook.Services
 {
     public static class ConfigurationService
     {

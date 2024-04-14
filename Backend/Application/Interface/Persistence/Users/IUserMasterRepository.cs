@@ -1,6 +1,6 @@
-﻿using iMocha.Talent.Analytics.Domain.Users;
+﻿using CookBook.Domain.Users;
 
-namespace iMocha.Talent.Analytics.Application.Interface.Persistence.Users
+namespace CookBook.Application.Interface.Persistence.Users
 {
     public interface IUserMasterRepository : IRepository<UserMaster>
     {

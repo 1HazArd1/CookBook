@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Projects\\CookBook\\Backend\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "iMocha.Talent.Analytics.Infrastructure",
+        "projectName": "CookBook.Infrastructure",
         "projectPath": "C:\\Projects\\CookBook\\Backend\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\CookBook\\Backend\\Infrastructure\\obj\\",

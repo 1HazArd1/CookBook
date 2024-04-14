@@ -15,20 +15,21 @@ D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\
 D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\refint\iMocha.Talent.Analytics.Persistence.dll
 D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\iMocha.Talent.Analytics.Persistence.pdb
 D:\OneDrive - Mocha Technologies\Talent Analytics\backend\Persistence\obj\Debug\net6.0\ref\iMocha.Talent.Analytics.Persistence.dll
-C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.deps.json
-C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.dll
-C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Persistence.pdb
-C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Application.dll
-C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.dll
-C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Application.pdb
-C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\iMocha.Talent.Analytics.Domain.pdb
 C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.csproj.AssemblyReference.cache
 C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfoInputs.cache
 C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfo.cs
 C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.csproj.CoreCompileInputs.cache
 C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persiste.61C28332.Up2Date
-C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\iMocha.Talent.Analytics.Persistence.dll
-C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\refint\iMocha.Talent.Analytics.Persistence.dll
-C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\iMocha.Talent.Analytics.Persistence.pdb
-C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\ref\iMocha.Talent.Analytics.Persistence.dll
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\CookBook.Persistence.deps.json
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\CookBook.Persistence.dll
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\CookBook.Persistence.pdb
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\CookBook.Application.dll
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\CookBook.Domain.dll
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\CookBook.Application.pdb
+C:\Projects\CookBook\Backend\Persistence\bin\Debug\net6.0\CookBook.Domain.pdb
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\Persistence.sourcelink.json
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\CookBook.Persistence.dll
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\refint\CookBook.Persistence.dll
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\CookBook.Persistence.pdb
+C:\Projects\CookBook\Backend\Persistence\obj\Debug\net6.0\ref\CookBook.Persistence.dll

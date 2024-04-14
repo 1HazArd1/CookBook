@@ -15,7 +15,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Projects\\CookBook\\Backend\\Domain\\Domain.csproj",
-      "projectName": "iMocha.Talent.Analytics.Domain",
+      "projectName": "CookBook.Domain",
       "projectPath": "C:\\Projects\\CookBook\\Backend\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Projects\\CookBook\\Backend\\Domain\\obj\\",

@@ -1119,31 +1119,31 @@
           }
         }
       },
-      "iMocha.Talent.Analytics.Application/1.0.0": {
+      "CookBook.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "CookBook.Domain": "1.0.0",
           "FluentValidation.DependencyInjectionExtensions": "11.6.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.8",
-          "Microsoft.Extensions.DependencyInjection": "7.0.0",
-          "iMocha.Talent.Analytics.Domain": "1.0.0"
+          "Microsoft.Extensions.DependencyInjection": "7.0.0"
         },
         "compile": {
-          "bin/placeholder/iMocha.Talent.Analytics.Application.dll": {}
+          "bin/placeholder/CookBook.Application.dll": {}
         },
         "runtime": {
-          "bin/placeholder/iMocha.Talent.Analytics.Application.dll": {}
+          "bin/placeholder/CookBook.Application.dll": {}
         }
       },
-      "iMocha.Talent.Analytics.Domain/1.0.0": {
+      "CookBook.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/iMocha.Talent.Analytics.Domain.dll": {}
+          "bin/placeholder/CookBook.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/iMocha.Talent.Analytics.Domain.dll": {}
+          "bin/placeholder/CookBook.Domain.dll": {}
         }
       }
     }
@@ -3398,12 +3398,12 @@
         "version.txt"
       ]
     },
-    "iMocha.Talent.Analytics.Application/1.0.0": {
+    "CookBook.Application/1.0.0": {
       "type": "project",
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
-    "iMocha.Talent.Analytics.Domain/1.0.0": {
+    "CookBook.Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
@@ -3411,9 +3411,9 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.8",
-      "iMocha.Talent.Analytics.Application >= 1.0.0",
-      "iMocha.Talent.Analytics.Domain >= 1.0.0"
+      "CookBook.Application >= 1.0.0",
+      "CookBook.Domain >= 1.0.0",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.8"
     ]
   },
   "packageFolders": {
@@ -3424,7 +3424,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Projects\\CookBook\\Backend\\Persistence\\Persistence.csproj",
-      "projectName": "iMocha.Talent.Analytics.Persistence",
+      "projectName": "CookBook.Persistence",
       "projectPath": "C:\\Projects\\CookBook\\Backend\\Persistence\\Persistence.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Projects\\CookBook\\Backend\\Persistence\\obj\\",

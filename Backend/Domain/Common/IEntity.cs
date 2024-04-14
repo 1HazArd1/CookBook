@@ -1,4 +1,4 @@
-﻿namespace iMocha.Talent.Analytics.Domain.Common
+﻿namespace CookBook.Domain.Common
 {
     public interface IEntity
     {

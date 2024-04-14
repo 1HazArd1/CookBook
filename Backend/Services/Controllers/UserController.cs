@@ -1,9 +1,9 @@
-﻿using iMocha.Talent.Analytics.Application.Users;
-using iMocha.Talent.Analytics.Domain.Users;
+﻿using CookBook.Application.Users;
+using CookBook.Domain.Users;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace iMocha.Talent.Analytics.Services.Controllers
+namespace CookBook.Services.Controllers
 {
     public class UserController : ApiControllerBase
     {

@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using iMocha.Talent.Analytics.Application.Exceptions;
+using CookBook.Application.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace iMocha.Talent.Analytics.Services.Filters
+namespace CookBook.Services.Filters
 {
     public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {

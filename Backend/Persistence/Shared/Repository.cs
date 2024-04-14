@@ -1,8 +1,8 @@
-﻿using iMocha.Talent.Analytics.Application.Interface.Persistence;
-using iMocha.Talent.Analytics.Domain.Common;
+﻿using CookBook.Application.Interface.Persistence;
+using CookBook.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace iMocha.Talent.Analytics.Persistence.Shared
+namespace CookBook.Persistence.Shared
 {
     public class Repository<T> : IRepository<T>
         where T : class, IEntity

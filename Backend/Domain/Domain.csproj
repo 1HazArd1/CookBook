@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>iMocha.Talent.Analytics.Domain</AssemblyName>
-    <RootNamespace>iMocha.Talent.Analytics.Domain</RootNamespace>
+    <AssemblyName>CookBook.Domain</AssemblyName>
+    <RootNamespace>CookBook.Domain</RootNamespace>
   </PropertyGroup>
 
 </Project>

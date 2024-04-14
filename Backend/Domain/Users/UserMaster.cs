@@ -1,7 +1,7 @@
 ﻿
-using iMocha.Talent.Analytics.Domain.Common;
+using CookBook.Domain.Common;
 
-namespace iMocha.Talent.Analytics.Domain.Users
+namespace CookBook.Domain.Users
 {
     public class UserMaster : IEntity
     {

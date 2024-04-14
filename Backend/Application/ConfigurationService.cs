@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace iMocha.Talent.Analytics.Application
+namespace CookBook.Application
 {
     public static class ConfigurationService
     {

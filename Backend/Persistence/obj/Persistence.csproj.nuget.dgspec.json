@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Projects\\CookBook\\Backend\\Application\\Application.csproj",
-        "projectName": "iMocha.Talent.Analytics.Application",
+        "projectName": "CookBook.Application",
         "projectPath": "C:\\Projects\\CookBook\\Backend\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\CookBook\\Backend\\Application\\obj\\",
@@ -94,7 +94,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Projects\\CookBook\\Backend\\Domain\\Domain.csproj",
-        "projectName": "iMocha.Talent.Analytics.Domain",
+        "projectName": "CookBook.Domain",
         "projectPath": "C:\\Projects\\CookBook\\Backend\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\CookBook\\Backend\\Domain\\obj\\",
@@ -158,7 +158,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Projects\\CookBook\\Backend\\Persistence\\Persistence.csproj",
-        "projectName": "iMocha.Talent.Analytics.Persistence",
+        "projectName": "CookBook.Persistence",
         "projectPath": "C:\\Projects\\CookBook\\Backend\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\CookBook\\Backend\\Persistence\\obj\\",

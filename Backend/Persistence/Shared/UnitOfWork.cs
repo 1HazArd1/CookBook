@@ -1,6 +1,6 @@
-﻿using iMocha.Talent.Analytics.Application.Interface.Persistence;
+﻿using CookBook.Application.Interface.Persistence;
 
-namespace iMocha.Talent.Analytics.Persistence.Shared
+namespace CookBook.Persistence.Shared
 {
     public class UnitOfWork : IUnitOfWork
     {
