@@ -38,12 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -52,7 +48,7 @@
               "RelativeDocumentMoniker": "Services\\appsettings.Development.json",
               "ToolTip": "C:\\Projects\\CookBook\\Backend\\Services\\appsettings.Development.json",
               "RelativeToolTip": "Services\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAACTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-05-05T16:24:52.94Z",
               "EditorCaption": ""
@@ -67,8 +63,7 @@
               "RelativeToolTip": "Application\\Users\\GetUsersByCustomerIdQueryHandler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T15:48:42.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T15:48:42.176Z"
             },
             {
               "$type": "Document",
@@ -80,8 +75,7 @@
               "RelativeToolTip": "Application\\Common\\Models\\LoggedInUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T18:27:49.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T18:27:49.494Z"
             },
             {
               "$type": "Document",
@@ -93,8 +87,7 @@
               "RelativeToolTip": "Services\\Configuration.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T16:30:28.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T16:30:28.806Z"
             },
             {
               "$type": "Document",
@@ -106,8 +99,7 @@
               "RelativeToolTip": "Persistence\\Users\\UserMasterConfiguration.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:48:54.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T15:48:54.385Z"
             },
             {
               "$type": "Document",
@@ -119,8 +111,7 @@
               "RelativeToolTip": "Services\\Controllers\\UserController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:48:29.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T15:48:29.69Z"
             },
             {
               "$type": "Document",
@@ -132,8 +123,7 @@
               "RelativeToolTip": "Domain\\Users\\UserMaster.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:47:36.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T15:47:36.929Z"
             }
           ]
         }
