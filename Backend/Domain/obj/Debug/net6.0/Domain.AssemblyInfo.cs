@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CookBook.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8aa225db33d50db1764f4b338a71d1c5a53d2854")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05108aa375411b8de86b37fead9d4e6605e57b69")]
 [assembly: System.Reflection.AssemblyProductAttribute("CookBook.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CookBook.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

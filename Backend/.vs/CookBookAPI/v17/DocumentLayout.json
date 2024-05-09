@@ -3,64 +3,24 @@
   "WorkspaceRootPath": "C:\\Projects\\CookBook\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|c:\\projects\\cookbook\\backend\\persistence\\shared\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|solutionrelative:persistence\\shared\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|c:\\projects\\cookbook\\backend\\application\\auth\\createusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|solutionrelative:application\\auth\\createusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|c:\\projects\\cookbook\\backend\\persistence\\dishes\\directionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|solutionrelative:persistence\\dishes\\directionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|c:\\projects\\cookbook\\backend\\persistence\\dishes\\componentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|solutionrelative:persistence\\dishes\\componentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|c:\\projects\\cookbook\\backend\\persistence\\dishes\\recipeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|solutionrelative:persistence\\dishes\\recipeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|c:\\projects\\cookbook\\backend\\persistence\\users\\usermasterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|solutionrelative:persistence\\users\\usermasterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|c:\\projects\\cookbook\\backend\\domain\\users\\usermaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|solutionrelative:domain\\users\\usermaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|c:\\projects\\cookbook\\backend\\domain\\dishes\\direction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|solutionrelative:domain\\dishes\\direction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|c:\\projects\\cookbook\\backend\\domain\\dishes\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|solutionrelative:domain\\dishes\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|c:\\projects\\cookbook\\backend\\domain\\dishes\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|solutionrelative:domain\\dishes\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|c:\\projects\\cookbook\\backend\\persistence\\dishes\\reciperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BD3999-D257-464E-86C3-DF09F0803EC8}|Persistence\\Persistence.csproj|solutionrelative:persistence\\dishes\\reciperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|c:\\projects\\cookbook\\backend\\application\\common\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|solutionrelative:application\\common\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|c:\\projects\\cookbook\\backend\\application\\users\\getusersbycustomeridqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|solutionrelative:application\\users\\getusersbycustomeridqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|c:\\projects\\cookbook\\backend\\domain\\users\\usermaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E4E56F6-489D-400D-BF4F-4A2A1908082D}|Domain\\Domain.csproj|solutionrelative:domain\\users\\usermaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|c:\\projects\\cookbook\\backend\\application\\common\\models\\loggedinuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|solutionrelative:application\\common\\models\\loggedinuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,186 +34,59 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DirectionConfiguration.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Persistence\\Dishes\\DirectionConfiguration.cs",
-              "RelativeDocumentMoniker": "Persistence\\Dishes\\DirectionConfiguration.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Persistence\\Dishes\\DirectionConfiguration.cs",
-              "RelativeToolTip": "Persistence\\Dishes\\DirectionConfiguration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABrAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T12:46:22.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ComponentConfiguration.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Persistence\\Dishes\\ComponentConfiguration.cs",
-              "RelativeDocumentMoniker": "Persistence\\Dishes\\ComponentConfiguration.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Persistence\\Dishes\\ComponentConfiguration.cs",
-              "RelativeToolTip": "Persistence\\Dishes\\ComponentConfiguration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T12:38:57.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DatabaseContext.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Persistence\\Shared\\DatabaseContext.cs",
-              "RelativeDocumentMoniker": "Persistence\\Shared\\DatabaseContext.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Persistence\\Shared\\DatabaseContext.cs",
-              "RelativeToolTip": "Persistence\\Shared\\DatabaseContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAewB4AAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T12:37:17.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RecipeConfiguration.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Persistence\\Dishes\\RecipeConfiguration.cs",
-              "RelativeDocumentMoniker": "Persistence\\Dishes\\RecipeConfiguration.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Persistence\\Dishes\\RecipeConfiguration.cs",
-              "RelativeToolTip": "Persistence\\Dishes\\RecipeConfiguration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T12:30:25.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RecipeRepository.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Persistence\\Dishes\\RecipeRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Dishes\\RecipeRepository.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Persistence\\Dishes\\RecipeRepository.cs",
-              "RelativeToolTip": "Persistence\\Dishes\\RecipeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T11:44:42.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Direction.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Domain\\Dishes\\Direction.cs",
-              "RelativeDocumentMoniker": "Domain\\Dishes\\Direction.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Domain\\Dishes\\Direction.cs",
-              "RelativeToolTip": "Domain\\Dishes\\Direction.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T11:05:34.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Component.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Domain\\Dishes\\Component.cs",
-              "RelativeDocumentMoniker": "Domain\\Dishes\\Component.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Domain\\Dishes\\Component.cs",
-              "RelativeToolTip": "Domain\\Dishes\\Component.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T10:32:32.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Recipe.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Domain\\Dishes\\Recipe.cs",
-              "RelativeDocumentMoniker": "Domain\\Dishes\\Recipe.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Domain\\Dishes\\Recipe.cs",
-              "RelativeToolTip": "Domain\\Dishes\\Recipe.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T08:38:46.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "UserMaster.cs",
               "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Domain\\Users\\UserMaster.cs",
               "RelativeDocumentMoniker": "Domain\\Users\\UserMaster.cs",
               "ToolTip": "C:\\Projects\\CookBook\\Backend\\Domain\\Users\\UserMaster.cs",
               "RelativeToolTip": "Domain\\Users\\UserMaster.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:47:36.929Z",
+              "WhenOpened": "2024-05-09T19:02:48.988Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Services\\appsettings.Development.json",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Services\\appsettings.Development.json",
-              "RelativeToolTip": "Services\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAACTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-05T16:24:52.94Z",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Application\\Common\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Models\\User.cs",
+              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Application\\Common\\Models\\User.cs",
+              "RelativeToolTip": "Application\\Common\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T19:00:57.207Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Configuration.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\Configuration.cs",
-              "RelativeDocumentMoniker": "Services\\Configuration.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Services\\Configuration.cs",
-              "RelativeToolTip": "Services\\Configuration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "CreateUserCommandHandler.cs",
+              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Application\\Auth\\CreateUserCommandHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Auth\\CreateUserCommandHandler.cs",
+              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Application\\Auth\\CreateUserCommandHandler.cs",
+              "RelativeToolTip": "Application\\Auth\\CreateUserCommandHandler.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowCMAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T16:30:28.806Z"
+              "WhenOpened": "2024-05-09T18:57:19.099Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UserMasterConfiguration.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Persistence\\Users\\UserMasterConfiguration.cs",
-              "RelativeDocumentMoniker": "Persistence\\Users\\UserMasterConfiguration.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Persistence\\Users\\UserMasterConfiguration.cs",
-              "RelativeToolTip": "Persistence\\Users\\UserMasterConfiguration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAwAAAA",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Services\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Services\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Services\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:48:54.385Z",
+              "WhenOpened": "2024-05-09T18:48:46.182Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GetUsersByCustomerIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Application\\Users\\GetUsersByCustomerIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Users\\GetUsersByCustomerIdQueryHandler.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Application\\Users\\GetUsersByCustomerIdQueryHandler.cs",
-              "RelativeToolTip": "Application\\Users\\GetUsersByCustomerIdQueryHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T15:48:42.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "LoggedInUser.cs",
-              "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Application\\Common\\Models\\LoggedInUser.cs",
-              "RelativeDocumentMoniker": "Application\\Common\\Models\\LoggedInUser.cs",
-              "ToolTip": "C:\\Projects\\CookBook\\Backend\\Application\\Common\\Models\\LoggedInUser.cs",
-              "RelativeToolTip": "Application\\Common\\Models\\LoggedInUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T18:27:49.494Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Services\\Controllers\\UserController.cs",
@@ -261,7 +94,8 @@
               "RelativeToolTip": "Services\\Controllers\\UserController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T15:48:29.69Z"
+              "WhenOpened": "2024-04-14T15:48:29.69Z",
+              "EditorCaption": ""
             }
           ]
         }
