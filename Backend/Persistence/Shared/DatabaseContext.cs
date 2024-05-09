@@ -1,4 +1,5 @@
 ﻿using CookBook.Domain.Common;
+using CookBook.Persistence.Dishes;
 using CookBook.Persistence.Users;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,9 @@ namespace CookBook.Persistence.Shared
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new UserMasterConfiguration());
+            modelBuilder.ApplyConfiguration(new RecipeConfiguration());
+            modelBuilder.ApplyConfiguration(new ComponentConfiguration());
+            modelBuilder.ApplyConfiguration(new DirectionConfiguration());
         }
     }
 }
