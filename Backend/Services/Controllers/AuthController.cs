@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CookBook.Services.Controllers
 {
-    public class AuthController : ApiAuthorizeControllerBase
+    public class AuthController : ApiControllerBase
     {
         private readonly IMediator mediator;
 
@@ -13,6 +13,7 @@ namespace CookBook.Services.Controllers
         {
             this.mediator = mediator;
         }
+        [HttpPost]
         public async Task<long> Register([FromQuery] User User)
         {
             return await mediator.Send(new CreateUserCommand(User));

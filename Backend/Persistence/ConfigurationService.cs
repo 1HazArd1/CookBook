@@ -1,4 +1,5 @@
-﻿using CookBook.Application.Interface.Persistence.Dishes;
+﻿using CookBook.Application.Interface.Persistence;
+using CookBook.Application.Interface.Persistence.Dishes;
 using CookBook.Application.Interface.Persistence.Users;
 using CookBook.Persistence.Dishes;
 using CookBook.Persistence.Shared;
@@ -17,6 +18,7 @@ namespace CookBook.Persistence
                 options.UseSqlServer(configuration.GetConnectionString("iMochaDBConnection")), ServiceLifetime.Scoped);
 
             services.AddScoped(typeof(IDatabaseContext), typeof(DatabaseContext));
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped(typeof(IUserMasterRepository), typeof(UserMasterRepository));
             services.AddScoped(typeof(IRecipeRepository), typeof(RecipeRepository));
             services.AddScoped(typeof(IComponentRepository), typeof(ComponentRepository));
