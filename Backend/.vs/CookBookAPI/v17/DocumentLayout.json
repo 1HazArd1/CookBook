@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Projects\\CookBook\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|c:\\projects\\cookbook\\backend\\application\\auth\\createusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|solutionrelative:application\\auth\\createusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0D1E262-6121-43F8-BBB2-9B03914FFEEF}|Application\\Application.csproj|c:\\projects\\cookbook\\backend\\application\\common\\encryptor\\cryptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|c:\\projects\\cookbook\\backend\\services\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FA73B99-3D14-4ADE-AF24-B8D6E393C1D7}|Services\\Services.csproj|solutionrelative:services\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -38,11 +38,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ConfigurationService.cs",
               "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Application\\ConfigurationService.cs",
               "RelativeDocumentMoniker": "Application\\ConfigurationService.cs",
@@ -50,12 +54,11 @@
               "RelativeToolTip": "Application\\ConfigurationService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T12:22:07.006Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T12:22:07.006Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Cryptor.cs",
               "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Application\\Common\\Encryptor\\Cryptor.cs",
               "RelativeDocumentMoniker": "Application\\Common\\Encryptor\\Cryptor.cs",
@@ -63,25 +66,24 @@
               "RelativeToolTip": "Application\\Common\\Encryptor\\Cryptor.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAQwCQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T11:35:22.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T11:35:22.461Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Services\\appsettings.Development.json",
               "ToolTip": "C:\\Projects\\CookBook\\Backend\\Services\\appsettings.Development.json",
               "RelativeToolTip": "Services\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAACAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-05-10T09:01:45.545Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Services\\Controllers\\AuthController.cs",
@@ -102,12 +104,11 @@
               "RelativeToolTip": "Services\\Controllers\\UserController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T08:55:33.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T08:55:33.872Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Services\\Program.cs",
               "RelativeDocumentMoniker": "Services\\Program.cs",
@@ -115,18 +116,17 @@
               "RelativeToolTip": "Services\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T08:37:56.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T08:37:56.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CreateUserCommandHandler.cs",
               "DocumentMoniker": "C:\\Projects\\CookBook\\Backend\\Application\\Auth\\CreateUserCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Auth\\CreateUserCommandHandler.cs",
               "ToolTip": "C:\\Projects\\CookBook\\Backend\\Application\\Auth\\CreateUserCommandHandler.cs",
               "RelativeToolTip": "Application\\Auth\\CreateUserCommandHandler.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAiwEsAAAAIAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAiwDEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-09T18:57:19.099Z",
               "EditorCaption": ""
