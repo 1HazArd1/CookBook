@@ -13,10 +13,18 @@ namespace CookBook.Services.Controllers
         {
             this.mediator = mediator;
         }
-        [HttpPost]
-        public async Task<long> Register([FromQuery] User User)
+
+        [HttpPost("register")]
+        public async Task<long> Register([FromBody] User User)
         {
             return await mediator.Send(new CreateUserCommand(User));
         }
+
+        [HttpPost("login")]
+        public async Task<AuthSession> Login(LoginUserCommand loginUserCommand)
+        {
+            return await mediator.Send(loginUserCommand);
+        }
+
     }
 }

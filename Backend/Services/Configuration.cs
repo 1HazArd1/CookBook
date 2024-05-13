@@ -1,4 +1,6 @@
-﻿using CookBook.Services.Filters;
+﻿using CookBook.Application.Interface.Auth;
+using CookBook.Services.Filters;
+using CookBook.Services.Services;
 
 namespace CookBook.Services
 {
@@ -18,6 +20,8 @@ namespace CookBook.Services
             services.SetCors(configuration);
             services.AddMemoryCache();
             services.AddHttpContextAccessor();
+
+            services.AddScoped(typeof(ITokenService), typeof(JWTTokenService));
 
             return services;
         }

@@ -1,4 +1,5 @@
-﻿using CookBook.Application.Common.Encryptor;
+﻿using CookBook.Application.Auth;
+using CookBook.Application.Common.Encryptor;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,7 @@ namespace CookBook.Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddScoped(typeof(ICryptor), typeof(Cryptor));
+            services.AddScoped(typeof(IAuthService), typeof(AuthService));
 
             return services;
         }
