@@ -62,7 +62,7 @@ namespace CookBook.Application.Auth
                 FirstName = request.User.FirstName,
                 LastName = request.User.LastName,
                 FullName = request.User.LastName == null ? request.User.FirstName : request.User.FirstName + " " + request.User.LastName,
-                Email = request.User.Email,
+                Email = request.User.Email.Trim(),
                 Password = encryptedPassword,
                 CreatedOn = DateTime.Now,
                 Status = 1,
