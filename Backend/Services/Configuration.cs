@@ -1,6 +1,9 @@
 ﻿using CookBook.Application.Interface.Auth;
 using CookBook.Services.Filters;
 using CookBook.Services.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace CookBook.Services
 {
@@ -21,8 +24,10 @@ namespace CookBook.Services
             services.AddMemoryCache();
             services.AddHttpContextAccessor();
 
-            services.AddScoped(typeof(ITokenService), typeof(JWTTokenService));
+            services.SetAuthentication(configuration);
 
+            services.AddScoped(typeof(ITokenService), typeof(JWTTokenService));
+            services.AddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
             return services;
         }
         private static void SetCors(this IServiceCollection services, IConfiguration configuration)
@@ -36,6 +41,27 @@ namespace CookBook.Services
                    build.WithOrigins(origins).AllowAnyHeader().WithMethods("GET", "POST").SetPreflightMaxAge(TimeSpan.FromMinutes(20));
                }
            ));
+        }
+        public static void SetAuthentication(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(o =>
+            {
+                o.SaveToken = true;
+                o.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidIssuer = configuration["JWT:Issuer"],
+                    ValidAudience = configuration["JWT:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]!)),
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                };
+            });
+            services.AddAuthorization();
         }
     }
     public class CorsConfig

@@ -23,7 +23,7 @@ namespace CookBook.Application.Auth
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, user.Email),
+                new Claim("Email", user.Email),
                 new Claim("UserId", user.UserId.ToString())
             };
             string token = tokenService.GenerateAccessToken(claims);
