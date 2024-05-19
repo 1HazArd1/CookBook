@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.cookbook.R
 
 class LoginFragment: Fragment() {
-    private var itemView: View? = null;
+    private var itemView: View? = null
     private var registerUser : LinearLayout? = null
 
     override fun onCreateView(
@@ -19,7 +19,7 @@ class LoginFragment: Fragment() {
     ): View? {
         itemView = layoutInflater.inflate(R.layout.login_fragment, container,false)
 
-        registerUser = itemView?.findViewById(R.id.tv_userSignUp);
+        registerUser = itemView?.findViewById(R.id.tv_userSignUp)
 
 
         registerUser?.setOnClickListener {
