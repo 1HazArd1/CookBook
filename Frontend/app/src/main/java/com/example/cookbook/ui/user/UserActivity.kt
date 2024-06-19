@@ -1,11 +1,11 @@
-package com.example.cookbook
+package com.example.cookbook.ui.user
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.cookbook.user.LoginFragment
+import com.example.cookbook.R
 
 class UserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
