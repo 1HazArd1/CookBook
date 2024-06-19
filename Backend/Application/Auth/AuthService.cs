@@ -21,10 +21,11 @@ namespace CookBook.Application.Auth
         }
         public AuthSession GetAuthSession(UserMaster user)
         {
-            List<Claim> claims = new List<Claim>
+            List<Claim> claims = new()
             {
-                new Claim("Email", user.Email),
-                new Claim("UserId", user.UserId.ToString())
+                new("Email", user.Email),
+                new("UserId", user.UserId.ToString()),
+                new("FullName", user.FullName.ToString())
             };
             string token = tokenService.GenerateAccessToken(claims);
 

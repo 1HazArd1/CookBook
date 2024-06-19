@@ -17,10 +17,10 @@ namespace CookBook.Services.Services
         public string GenerateAccessToken(IEnumerable<Claim> claims)
         {
             int tokenValidityInMinutes = int.Parse(configuration["JWT:TokenValidityMinutes"]!);
-            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]!));
-            SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]!));
+            SigningCredentials credentials = new(securityKey, SecurityAlgorithms.HmacSha256);
 
-            JwtSecurityToken jwtSecurityToken = new JwtSecurityToken(
+            JwtSecurityToken jwtSecurityToken = new (
                                                   configuration["JWT:Issuer"],
                                                   configuration["JWT:Audience"],
                                                   claims: claims,

@@ -1,4 +1,4 @@
-package com.example.cookbook.user
+package com.example.cookbook.ui.user
 
 import android.os.Bundle
 import android.view.LayoutInflater

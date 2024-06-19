@@ -38,7 +38,7 @@ namespace CookBook.Services
 
             services.AddCors(p =>
                p.AddPolicy("CorsPolicy", build => {
-                   build.WithOrigins(origins).AllowAnyHeader().WithMethods("GET", "POST").SetPreflightMaxAge(TimeSpan.FromMinutes(20));
+                   build.WithOrigins(origins).AllowAnyHeader().WithMethods("GET", "POST" , "PATCH" , "DELETE").SetPreflightMaxAge(TimeSpan.FromMinutes(20));
                }
            ));
         }
