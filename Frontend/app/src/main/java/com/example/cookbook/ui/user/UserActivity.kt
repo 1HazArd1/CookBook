@@ -1,11 +1,14 @@
 package com.example.cookbook.ui.user
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.cookbook.R
+import com.example.cookbook.services.sharedPreference.PreferenceManager
+import com.example.cookbook.ui.home.HomeActivity
 
 class UserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,11 +20,17 @@ class UserActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        addFragment()
+        val preferenceManager = PreferenceManager(this)
+        if(!preferenceManager.getToken().isNullOrEmpty()){
+            val intent =  Intent(this, HomeActivity :: class.java)
+            startActivity(intent)
+            finish()
+        }
+        addLoginFragment()
     }
-    private fun addFragment(){
+    private fun addLoginFragment(){
         val userSignInLayout = LoginFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fl_fragment_container, userSignInLayout)
+        supportFragmentManager.beginTransaction().add(R.id.fl_loginFragment_container, userSignInLayout)
             .commit()
     }
 }
