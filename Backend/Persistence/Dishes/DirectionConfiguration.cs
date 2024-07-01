@@ -8,7 +8,7 @@ namespace CookBook.Persistence.Dishes
     {
         public void Configure(EntityTypeBuilder<Direction> builder)
         {
-            builder.ToTable("Direction");
+            builder.ToTable("RecipeInstruction");
             builder.HasKey(p => p.DirectionId);
             builder.HasOne(p => p.Component).WithMany(p => p.Directions).HasForeignKey(p => p.DirectionId);
             builder.HasQueryFilter(p => p.Status == 1);

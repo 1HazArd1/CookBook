@@ -58,40 +58,69 @@ class RegisterFragment : Fragment() {
 
             lifecycleScope.launch {
                 lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                    Log.e(TAG,"REGISTERING")
-                    // do your work here
-                    val response = try {
-                        retrofitClient.register(user)
-                    }
-                    catch (e: IOException) {
-                        Log.e(TAG, "I/O Exception: ${e.message}", e)
-                        return@repeatOnLifecycle
-                    } catch (e: HttpException) {
-                        Log.e(TAG, "Http Exception: ${e.message}", e)
-                        return@repeatOnLifecycle
-                    }
-                    catch (e:Exception){
-                        Log.e(TAG, "Exception : ${e.message}",e)
-                        return@repeatOnLifecycle
-                    }
-                    Log.d(TAG, "Response received ${response.body()} ${response.isSuccessful}")
-                    when {
-                        response.isSuccessful && response.body() != null -> {
-                            Log.d(TAG,"Registered successfully")
-                            val registrationId = response.body()
-                            // Handle successful registration with the received registrationId (Long)
-                            Toast.makeText(context, "Registered Successfully with ID $registrationId", Toast.LENGTH_SHORT).show()
+
+                    if (verifyUserData()) {
+                        val retrofitClient =
+                            RetrofitService.retrofit.create(UserApiInterface::class.java)
+                        Log.d(TAG, "REGISTERING")
+                        // call the register api
+                        val response = try {
+                            retrofitClient.register(user)
+                        } catch (e: IOException) {
+                            Log.e(TAG, "I/O Exception: ${e.message}", e)
+                            return@repeatOnLifecycle
+                        } catch (e: HttpException) {
+                            Log.e(TAG, "Http Exception: ${e.message}", e)
+                            return@repeatOnLifecycle
+                        } catch (e: Exception) {
+                            Log.e(TAG, "Exception : ${e.message}", e)
+                            return@repeatOnLifecycle
                         }
-                        response.isSuccessful && response.body() == null -> {
-                            Log.d(TAG,"Registered successfully but improper response")
-                            // Handle successful response but with a null body
-                            Toast.makeText(context, "Registered Successfully, but no ID received", Toast.LENGTH_SHORT).show()
-                        }
-                        else -> {
-                            Log.e(TAG,"Registration failed ${response.errorBody()?.string()}")
-                            // Handle unsuccessful response
-                            val errorMessage = response.errorBody()?.string() ?: "Unknown error occurred"
-                            Toast.makeText(context, "Registration Failed: $errorMessage", Toast.LENGTH_SHORT).show()
+                        Log.d(TAG, "Response received ${response.body()}")
+
+                        when {
+                            response.isSuccessful && response.body() != null -> {
+                                Log.d(TAG, "Registered successfully")
+                                withContext(Dispatchers.Main) {
+                                    val registrationId = response.body()
+                                    Log.d(TAG,"UserId : $registrationId")
+                                    // Successful Registration
+                                    Toast.makeText(
+                                        context,
+                                        "Registered Successfully",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    activity?.let {
+                                        val intent = Intent(context, HomeActivity::class.java)
+                                        startActivity(intent)
+                                    }
+                                    activity?.finish()
+                                }
+                            }
+
+                            response.isSuccessful && response.body() == null -> {
+                                Log.d(TAG, "Registered successfully but improper response")
+                                // Successful registration failed to get response
+                                withContext(Dispatchers.Main) {
+                                    Toast.makeText(
+                                        context,
+                                        "Registered Successfully, but no ID received",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
+
+                            else -> {
+                                Log.e(TAG, "Registration failed ${response.errorBody()?.string()}")
+                                // Handle unsuccessful response
+                                withContext(Dispatchers.Main) {
+                                    Toast.makeText(
+                                        context,
+                                        "Something went wrong registration failed",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
                         }
                     }
                 }

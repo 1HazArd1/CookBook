@@ -7,7 +7,7 @@ namespace CookBook.Domain.Dishes
         public long DirectionId { get; set; }
         public long UserId { get; set; }
         public long ComponentId { get; set; }
-        public int StepNo { get; set; }
+        public byte StepNo { get; set; }
         public string Instruction { get; set; }
         public byte Status {  get; set; }
         public Component Component { get; set; }

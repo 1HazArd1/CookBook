@@ -7,8 +7,9 @@ namespace CookBook.Domain.Dishes
         public long RecipeId { get; set; }
         public long UserId { get; set; }
         public string RecipeName { get; set; }
-        public string Cuisine {  get; set; }
-        public string RecipeUrl { get; set; }
+        public string? Cuisine {  get; set; }
+        public string? RecipeUrl { get; set; }
+        public int Duration { get; set; }
         public byte Status { get; set; }
         public List<Component> Components { get; set; }
         public DateTime CreatedOn { get; set; }
