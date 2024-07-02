@@ -10,8 +10,12 @@
 
 
 1. AuthController (01)
-	a. CreatUserCommandHandler (00) :
-		i. User with the provided email already exist (01): "BE010001"
-	b. LoginUserCommandHandler (01):
-		i. User with the provided email does not exist (01): "BE010101"
-		ii. Incorrect Password (02): "BE010102"
+	a. CreateUserCommandHandler (01) :
+		i. User with the provided email already exist (01): "BE010101"
+	b. LoginUserCommandHandler (02):
+		i. User with the provided email does not exist (01): "BE010201"
+		ii. Incorrect Password (02): "BE010202"
+
+2. HomeController (02)
+	a. CreateUserRecipeCommandHandler (01) :
+		i. Recipe alreasy exist (01): "BE020101"

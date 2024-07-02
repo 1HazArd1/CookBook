@@ -53,7 +53,7 @@ namespace CookBook.Application.Auth
                             .AnyAsync(x => x.Email == request.User.Email);
 
             if (userExists)
-                throw new BadRequestException("BE010001");
+                throw new BadRequestException("BE010101");
 
             string encryptedPassword = cryptor.Encrypt(request.User.Password);
 
