@@ -7,6 +7,7 @@
         public string? Cuisine { get; set; }
         public string? RecipeUrl { get; set; }
         public int Duration { get; set; }
+        public byte? Servings { get; set; }
         public bool? IsEditable { get; set; }
     }
 }

@@ -32,6 +32,7 @@ namespace CookBook.Application.Dishes
                                        RecipeUrl = x.RecipeUrl,
                                        Cuisine = x.Cuisine,
                                        Duration = x.Duration,
+                                       Servings = x.Servings,
                                        IsEditable = x.UserId == loggedInUser.UserId
                                    }).ToListAsync(cancellationToken);
 

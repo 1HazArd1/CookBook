@@ -1,6 +1,7 @@
 ﻿using CookBook.Application.Interface.Persistence;
 using CookBook.Domain.Common;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
 
 namespace CookBook.Persistence.Shared
 {
@@ -39,6 +40,11 @@ namespace CookBook.Persistence.Shared
         public void Remove(T entity)
         {
             database.Set<T>().Remove(entity);
+        }
+
+        public async Task AddRangeAsync(IEnumerable<T> entities)
+        {
+            await database.Set<T>().AddRangeAsync(entities);
         }
     }
 }

@@ -18,4 +18,4 @@
 
 2. HomeController (02)
 	a. CreateUserRecipeCommandHandler (01) :
-		i. Recipe alreasy exist (01): "BE020101"
+		i. Recipe already exist (01): "BE020101"

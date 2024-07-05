@@ -1,6 +1,5 @@
 ﻿using CookBook.Application.Common.Models;
 using CookBook.Application.Dishes;
-using CookBook.Application.Dishes.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,18 +20,17 @@ namespace CookBook.Services.Controllers
             return await mediator.Send(new GetAllRecipeQuery());
         }
 
-        [HttpPost("Recipe")]
-        public async Task<IActionResult> CreateUserRecipe(Recipe recipe)
+        [HttpGet("Recipe/{id}/Ingredients")]
+        public async Task<List<string>> GetRecipeIngredients(long id)
         {
-            await mediator.Send(new CreateRecipeCommand(recipe));
-            return Ok();
+            return await mediator.Send(new  GetRecipeIngredientsQuery(id));
         }
 
-        [HttpPost("Recipe/Instruction")]
-        public async Task<IActionResult> CreateRecipeInstruction(List<RecipeInstruction> recipeInstructions)
+        [HttpGet("Recipe/{id}/Instruction")]
+        public async Task<List<RecipeInstruction>> GetRecipeInstructions(long id)
         {
-            await mediator.Send(new CreateRecipeInstructionCommand(recipeInstructions));
-            return Ok();
+            return await mediator.Send(new GetRecipeDirectionsQuery(id));
         }
+
     }
 }

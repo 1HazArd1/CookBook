@@ -1,8 +1,8 @@
 ﻿namespace CookBook.Application.Common.Models
 {
-    public class RecipeInstruction
+    public class UserRecipeInstruction
     {
         public string Component { get; set; }
-        public List<string> Directions { get; set; }
+        public string Directions { get; set; }
     }
 }

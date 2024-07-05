@@ -29,6 +29,7 @@ namespace CookBook.Persistence.Shared
             modelBuilder.ApplyConfiguration(new RecipeConfiguration());
             modelBuilder.ApplyConfiguration(new ComponentConfiguration());
             modelBuilder.ApplyConfiguration(new DirectionConfiguration());
+            modelBuilder.ApplyConfiguration(new IngredientsConfiguration());
         }
     }
 }
