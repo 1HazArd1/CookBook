@@ -4,14 +4,41 @@ using CookBook.Application.Interface.Auth;
 using CookBook.Application.Interface.Persistence;
 using CookBook.Application.Interface.Persistence.Dishes;
 using CookBook.Domain.Dishes;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace CookBook.Application.Dishes.Commands
 {
     public record CreateRecipeCommand(Common.Models.Recipe Recipe) : IRequest<Unit>;
-    public record CreateRecipeInstructionsCommand(List<UserRecipeInstruction> RecipeInstructions) : IRequest<Unit>;
     public record CreateRecipeIngredientsCommand(string Ingredients) : IRequest<Unit>;
+    public record CreateRecipeInstructionsCommand(List<UserRecipeInstruction> RecipeInstructions) : IRequest<Unit>;
+
+    public class CreateRecipeCommandValidator : AbstractValidator<CreateRecipeCommand>
+    {
+        public CreateRecipeCommandValidator() 
+        {
+            RuleFor(x => x.Recipe.Name).NotNull().NotEmpty();
+        }
+    }
+
+    public class CreateRecipeIngredientsCommandValidator : AbstractValidator<CreateRecipeIngredientsCommand>
+    {
+        public CreateRecipeIngredientsCommandValidator()
+        {
+            RuleFor(x => x.Ingredients).NotNull().NotEmpty();
+        }
+    }
+    public class CreateRecipeInstructionsCommandValidator : AbstractValidator<CreateRecipeInstructionsCommand>
+    {
+        public CreateRecipeInstructionsCommandValidator() 
+        { 
+            RuleFor(x => x.RecipeInstructions)
+                    .Must(instructions => instructions.Select(y => y.Component.ToLower().Trim()).Distinct().Count() == instructions.Count)
+                    .WithMessage("Duplicate component names are not allowed");
+        }
+
+    }
     public class CreateUserRecipeCommandHandler : IRequestHandler<CreateRecipeCommand, Unit>, IRequestHandler<CreateRecipeInstructionsCommand, Unit>, IRequestHandler<CreateRecipeIngredientsCommand, Unit>
     {
         private readonly IRecipeRepository recipeRepository;
@@ -20,14 +47,20 @@ namespace CookBook.Application.Dishes.Commands
         private readonly IIngredientsRepository ingredientsRepository;
         private readonly ICurrentUserService currentUserService;
         private readonly IUnitOfWork unitOfWork;
-        private long recipeId;
+        private readonly IValidator<CreateRecipeCommand> recipeValidator;
+        private readonly IValidator<CreateRecipeInstructionsCommand> instructionsValidator;
+        private readonly IValidator<CreateRecipeIngredientsCommand> ingredientsValidator;
+        private long recipeId = 1;
 
         public CreateUserRecipeCommandHandler(IRecipeRepository recipeRepository,
                                               IComponentRepository componentRepository,
                                               IDirectionRepository directionRepository,
                                               IIngredientsRepository ingredientsRepository,
                                               ICurrentUserService currentUserService,
-                                              IUnitOfWork unitOfWork)
+                                              IUnitOfWork unitOfWork,
+                                              IValidator<CreateRecipeCommand> recipeValidator,
+                                              IValidator<CreateRecipeIngredientsCommand> ingredientsValidator,
+                                              IValidator<CreateRecipeInstructionsCommand> instructionsValidator)
         {
             this.recipeRepository = recipeRepository;
             this.componentRepository = componentRepository;
@@ -35,12 +68,17 @@ namespace CookBook.Application.Dishes.Commands
             this.ingredientsRepository = ingredientsRepository;
             this.currentUserService = currentUserService;
             this.unitOfWork = unitOfWork;
+            this.recipeValidator = recipeValidator;
+            this.instructionsValidator = instructionsValidator;
+            this.ingredientsValidator = ingredientsValidator;
         }
 
         public long RecipeId { get => recipeId; set => recipeId = value; }
 
         public async Task<Unit> Handle(CreateRecipeCommand request, CancellationToken cancellationToken)
         {
+            await recipeValidator.ValidateAndThrowAsync(request, cancellationToken);
+
             long userId = currentUserService.GetUser().UserId;
 
             Domain.Dishes.Recipe? existingRecipe = await recipeRepository.GetAllAsNoTracking()
@@ -57,7 +95,7 @@ namespace CookBook.Application.Dishes.Commands
                 RecipeUrl = request.Recipe.RecipeUrl,
                 UserId = userId,
                 Duration = request.Recipe.Duration,
-                Servings= request.Recipe.Servings,
+                Servings = request.Recipe.Servings,
                 Status = 1,
                 CreatedBy = userId,
                 CreatedOn = DateTime.Now,
@@ -75,6 +113,8 @@ namespace CookBook.Application.Dishes.Commands
 
         public async Task<Unit> Handle(CreateRecipeIngredientsCommand request, CancellationToken cancellationToken)
         {
+            await ingredientsValidator.ValidateAndThrowAsync(request, cancellationToken);
+
             long userId = currentUserService.GetUser().UserId;
 
             List<string> ingredients = request.Ingredients
@@ -106,30 +146,53 @@ namespace CookBook.Application.Dishes.Commands
 
         public async Task<Unit> Handle(CreateRecipeInstructionsCommand request, CancellationToken cancellationToken)
         {
+            await instructionsValidator.ValidateAndThrowAsync(request, cancellationToken);
+
             long userId = currentUserService.GetUser().UserId;
 
             byte componentStepNo = 0;
             byte instructionStepNo = 0;
 
-            foreach(UserRecipeInstruction userRecipeInstruction  in request.RecipeInstructions)
+            List<Component> components = new();
+            List<Direction> directions = new();
+
+            List<string> componentNames = request.RecipeInstructions.Select(x => x.Component).ToList();
+
+            foreach (UserRecipeInstruction userRecipeInstruction in request.RecipeInstructions)
             {
                 componentStepNo++;
-                long componentId =  await CreateRecipeComponent(componentStepNo, userRecipeInstruction.Component, userId);
+                components.Add(CreateRecipeComponent(componentStepNo, userRecipeInstruction.Component, userId));
+            }
+            await componentRepository.AddRangeAsync(components);
+            await unitOfWork.SaveAsync();
+
+            Dictionary<string, long> componentMapping = await componentRepository.GetAllAsNoTracking()
+                                                       .Where(x => x.UserId == userId && x.RecipeId == recipeId && componentNames.Contains(x.ComponentName))
+                                                       .ToDictionaryAsync(x => x.ComponentName, x => x.ComponentId, cancellationToken);
+
+            foreach (UserRecipeInstruction userRecipeInstruction in request.RecipeInstructions)
+            {
                 List<string> recipeInstructions = userRecipeInstruction.Directions
                                                  .Split('$', StringSplitOptions.RemoveEmptyEntries).ToList();
 
-                foreach(string recipeInstruction in recipeInstructions)
+                long componentId = componentMapping.GetValueOrDefault(userRecipeInstruction.Component);
+
+                if (componentId == 0)
+                    continue;
+
+                foreach (string recipeInstruction in recipeInstructions)
                 {
                     instructionStepNo++;
-                    await CreateRecipeInstruction(componentId,instructionStepNo, recipeInstruction, userId);
+                    directions.Add(CreateRecipeInstruction(instructionStepNo, componentId, recipeInstruction, userId));
                 }
             }
+            await directionRepository.AddRangeAsync(directions);
             await unitOfWork.SaveAsync();
 
             return Unit.Value;
         }
 
-        private async Task<long> CreateRecipeComponent(byte stepNo, string componentName, long userId)
+        private Component CreateRecipeComponent(byte stepNo, string componentName, long userId)
         {
             Component recipeComponent = new()
             {
@@ -143,13 +206,11 @@ namespace CookBook.Application.Dishes.Commands
                 ModifiedBy = userId,
                 ModifiedOn = DateTime.Now
             };
-            await componentRepository.AddAsync(recipeComponent);
-            await unitOfWork.SaveAsync();
 
-            return recipeComponent.ComponentId;
+            return recipeComponent;
         }
 
-        private async Task CreateRecipeInstruction(long componentId, byte stepNo, string instruction, long userId)
+        private static Direction CreateRecipeInstruction(byte stepNo, long componentId, string instruction, long userId)
         {
             Direction recipeInstruction = new()
             {
@@ -163,7 +224,8 @@ namespace CookBook.Application.Dishes.Commands
                 ModifiedBy = userId,
                 ModifiedOn = DateTime.Now
             };
-            await directionRepository.AddAsync(recipeInstruction);
+
+            return recipeInstruction;
         }
     }
 }
