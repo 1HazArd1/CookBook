@@ -50,7 +50,7 @@ namespace CookBook.Application.Dishes.Commands
         private readonly IValidator<CreateRecipeCommand> recipeValidator;
         private readonly IValidator<CreateRecipeInstructionsCommand> instructionsValidator;
         private readonly IValidator<CreateRecipeIngredientsCommand> ingredientsValidator;
-        private long recipeId = 1;
+        private long recipeId;
 
         public CreateUserRecipeCommandHandler(IRecipeRepository recipeRepository,
                                               IComponentRepository componentRepository,
