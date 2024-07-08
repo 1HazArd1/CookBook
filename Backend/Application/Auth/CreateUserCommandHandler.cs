@@ -22,7 +22,7 @@ namespace CookBook.Application.Auth
                     .NotEmpty();
             RuleFor(x => x.User.Password).NotEmpty().WithMessage("Your password cannot be empty")
                     .MinimumLength(8).WithMessage("Your password length must be at least 8.")
-                    .MaximumLength(16).WithMessage("Your password length must not exceed 16.")
+                    .MaximumLength(25).WithMessage("Your password length must not exceed 25")
                     .Matches(@"[A-Z]+").WithMessage("Your password must contain at least one uppercase letter.")
                     .Matches(@"[a-z]+").WithMessage("Your password must contain at least one lowercase letter.")
                     .Matches(@"[0-9]+").WithMessage("Your password must contain at least one number.")
@@ -53,7 +53,7 @@ namespace CookBook.Application.Auth
                             .AnyAsync(x => x.Email == request.User.Email);
 
             if (userExists)
-                throw new BadRequestException("BE010001");
+                throw new BadRequestException("BE010101");
 
             string encryptedPassword = cryptor.Encrypt(request.User.Password);
 

@@ -9,6 +9,7 @@
         //T Get(int id);
 
         Task AddAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entities);
 
         void Remove(T entity);
     }

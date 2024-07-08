@@ -10,7 +10,7 @@ namespace CookBook.Persistence.Dishes
         {
             builder.ToTable("Direction");
             builder.HasKey(p => p.DirectionId);
-            builder.HasOne(p => p.Component).WithMany(p => p.Directions).HasForeignKey(p => p.DirectionId);
+            builder.HasOne(p => p.Component).WithMany(p => p.Directions).HasForeignKey(p => p.ComponentId);
             builder.HasQueryFilter(p => p.Status == 1);
         }
     }

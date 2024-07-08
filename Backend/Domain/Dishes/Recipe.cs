@@ -7,10 +7,13 @@ namespace CookBook.Domain.Dishes
         public long RecipeId { get; set; }
         public long UserId { get; set; }
         public string RecipeName { get; set; }
-        public string Cuisine {  get; set; }
-        public string RecipeUrl { get; set; }
+        public string? Cuisine {  get; set; }
+        public string? RecipeUrl { get; set; }
+        public int Duration { get; set; }
+        public byte? Servings { get; set; }
         public byte Status { get; set; }
         public List<Component> Components { get; set; }
+        public List<Ingredients> Ingredients { get; set; }
         public DateTime CreatedOn { get; set; }
         public long CreatedBy { get; set; }
         public DateTime ModifiedOn { get; set; }

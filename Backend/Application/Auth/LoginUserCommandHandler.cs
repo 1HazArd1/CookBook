@@ -44,12 +44,12 @@ namespace CookBook.Application.Auth
                                .SingleOrDefaultAsync(cancellationToken);
 
             if (user == null)
-                throw new BadRequestException("BE010101");
+                throw new BadRequestException("BE010201");
 
             bool isPasswordVerified = cryptor.VerifyEncrypt(user.Password, request.Password);
 
             if (!isPasswordVerified)
-                throw new UnauthorizedAccessException("BE010102");
+                throw new UnauthorizedAccessException("BE010202");
 
             AuthSession authSession = authService.GetAuthSession(user);
 

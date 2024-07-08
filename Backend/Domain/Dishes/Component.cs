@@ -7,7 +7,7 @@ namespace CookBook.Domain.Dishes
         public long ComponentId { get; set; }
         public long UserId { get; set; }
         public long RecipeId { get; set; }
-        public int StepNo { get; set; }
+        public byte StepNo { get; set; }
         public string ComponentName {  get; set; }
         public byte Status { get; set; }
         public Recipe Recipe { get; set; }
