@@ -22,14 +22,14 @@ namespace CookBook.Services.Controllers
             return Ok();
         }
 
-        [HttpPost("Ingredients")]
+        [HttpPost("ingredients")]
         public async Task<IActionResult> CreateRecipeIngredients([FromBody] string ingredients)
         {
             await mediator.Send(new CreateRecipeIngredientsCommand(ingredients));
             return Ok();
         }
 
-        [HttpPost("Instruction")]
+        [HttpPost("instruction")]
         public async Task<IActionResult> CreateRecipeInstruction(List<UserRecipeInstruction> recipeInstructions)
         {
             await mediator.Send(new CreateRecipeInstructionsCommand(recipeInstructions));
