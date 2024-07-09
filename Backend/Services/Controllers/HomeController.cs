@@ -14,19 +14,19 @@ namespace CookBook.Services.Controllers
             this.mediator = mediator;
         }
 
-        [HttpGet("Recipe")]
+        [HttpGet("recipe")]
         public async Task<List<Recipe>> GetAllRecipe()
         {
             return await mediator.Send(new GetAllRecipeQuery());
         }
 
-        [HttpGet("Recipe/{id}/Ingredients")]
+        [HttpGet("recipe/{id}/ingredients")]
         public async Task<List<string>> GetRecipeIngredients(long id)
         {
             return await mediator.Send(new  GetRecipeIngredientsQuery(id));
         }
 
-        [HttpGet("Recipe/{id}/Instruction")]
+        [HttpGet("recipe/{id}/instruction")]
         public async Task<List<RecipeInstruction>> GetRecipeInstructions(long id)
         {
             return await mediator.Send(new GetRecipeDirectionsQuery(id));
