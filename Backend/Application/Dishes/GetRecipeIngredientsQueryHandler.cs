@@ -1,4 +1,5 @@
-﻿using CookBook.Application.Common.Models;
+﻿using CookBook.Application.Common;
+using CookBook.Application.Common.Models;
 using CookBook.Application.Interface.Auth;
 using CookBook.Application.Interface.Persistence.Dishes;
 using MediatR;
@@ -23,7 +24,7 @@ namespace CookBook.Application.Dishes
             long userId = currentUserService.GetUser().UserId;
 
             List<string> ingredients = await ingredientsRepository.GetAllAsNoTracking()
-                                      .Where(x => x.UserId == userId && x.RecipeId == request.RecipeId)
+                                      .Where(x => x.UserId == userId || x.UserId == Global.AdminUserId && x.RecipeId == request.RecipeId)
                                       .Select(x => x.Ingredient)
                                       .ToListAsync(cancellationToken);
 

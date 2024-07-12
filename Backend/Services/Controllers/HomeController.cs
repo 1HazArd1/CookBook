@@ -23,7 +23,7 @@ namespace CookBook.Services.Controllers
         [HttpGet("recipe/{id}/ingredients")]
         public async Task<List<string>> GetRecipeIngredients(long id)
         {
-            return await mediator.Send(new  GetRecipeIngredientsQuery(id));
+            return await mediator.Send(new GetRecipeIngredientsQuery(id));
         }
 
         [HttpGet("recipe/{id}/instruction")]
