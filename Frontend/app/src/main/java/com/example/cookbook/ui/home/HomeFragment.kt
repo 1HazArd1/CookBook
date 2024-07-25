@@ -117,16 +117,18 @@ class HomeFragment : Fragment() {
                 when{
                     response.isSuccessful && response.body() != null -> {
                         withContext(Dispatchers.Main) {
-                            //Successful api and received the response
+                            //successfully fetched api and received the response
                             Log.d(TAG, "Response Received")
                             val list = response.body()!!
                             if(list.isNotEmpty()){
+                                //show all the recipes
                                 noRecipeTextView?.visibility = View.GONE
                                 recipeRecyclerView?.visibility = View.VISIBLE
                                 val recipeAdapter = RecipeAdapter(response.body())
                                 recipeRecyclerView?.adapter = recipeAdapter
                             }
                             else{
+                                // in case no recipes hase been added  show the default text
                                 noRecipeTextView?.visibility = View.VISIBLE
                                 recipeRecyclerView?.visibility = View.GONE
                             }
@@ -135,13 +137,15 @@ class HomeFragment : Fragment() {
                     }
                     response.isSuccessful && response.body() == null -> {
                         withContext(Dispatchers.Main){
+                            // successfully fetched api but received null response
                             Log.d(TAG, "Response Received with no data")
                             recipeRecyclerView?.visibility = View.GONE
                             noRecipeTextView?.visibility = View.VISIBLE
                         }
                     }
                     else ->{
-                        val errorResponse = response.errorBody()?.string()
+                        // any other case like unauthorised response
+                        val errorResponse = response.toString()
                         Log.e(TAG,"error : $errorResponse")
                     }
 
