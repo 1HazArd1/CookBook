@@ -1,6 +1,9 @@
 package com.example.cookbook.services.apiService
 
+import android.content.Context
 import com.example.cookbook.common.Constants
+import com.example.cookbook.services.sharedPreference.PreferenceManager
+import com.example.cookbook.ui.user.LoginFragment
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,7 +13,9 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-object RetrofitService {
+class RetrofitService(context: Context){
+
+    private val preferenceManager = PreferenceManager(context)
 
     private val client = OkHttpClient.Builder()
         .apply {
@@ -31,6 +36,7 @@ object RetrofitService {
             readTimeout(30, TimeUnit.SECONDS)
             writeTimeout(30, TimeUnit.SECONDS)
         }
+        .addInterceptor(AuthInterceptor(preferenceManager))
         .build()
 
     val retrofit : Retrofit by lazy {

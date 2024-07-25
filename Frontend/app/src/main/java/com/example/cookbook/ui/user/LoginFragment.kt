@@ -63,7 +63,8 @@ class LoginFragment: Fragment() {
 
             lifecycleScope.launch {
                 lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED){
-                    val retrofitClient = RetrofitService.retrofit.create(UserApiInterface ::class.java)
+                    val retrofitService = RetrofitService(requireContext())
+                    val retrofitClient = retrofitService.retrofit.create(UserApiInterface ::class.java)
                     Log.d(TAG,"Login Initiated")
                     val response = try {
                         retrofitClient.login(user)

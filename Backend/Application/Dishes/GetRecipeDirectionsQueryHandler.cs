@@ -1,4 +1,5 @@
-﻿using CookBook.Application.Common.Models;
+﻿using CookBook.Application.Common;
+using CookBook.Application.Common.Models;
 using CookBook.Application.Interface.Auth;
 using CookBook.Application.Interface.Persistence.Dishes;
 using MediatR;
@@ -24,7 +25,7 @@ namespace CookBook.Application.Dishes
             LoggedInUser loggedInUser = currentUserService.GetUser();
 
             List<RecipeInstruction> recipeDirections = await componentRepository.GetAllAsNoTracking()
-                                                       .Where(x => x.RecipeId == request.RecipeId && x.UserId == loggedInUser.UserId)
+                                                       .Where(x => x.RecipeId == request.RecipeId && x.UserId == loggedInUser.UserId || x.UserId == Global.AdminUserId)
                                                        .Select(x => new RecipeInstruction
                                                        {
                                                            Component = x.ComponentName,

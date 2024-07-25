@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_white">#fcfcfc</color>
+    <color name="section_separator">#ececec</color>
+    <color name="section_text">#60686f</color>
 </resources>
