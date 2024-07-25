@@ -64,8 +64,9 @@ class RegisterFragment : Fragment() {
                 lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
 
                     if (verifyUserData()) {
+                        val retrofitService = RetrofitService(requireContext())
                         val retrofitClient =
-                            RetrofitService.retrofit.create(UserApiInterface::class.java)
+                            retrofitService.retrofit.create(UserApiInterface::class.java)
                         Log.d(TAG, "REGISTERING")
                         // call the register api
                         val response = try {
