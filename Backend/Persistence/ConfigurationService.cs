@@ -24,6 +24,7 @@ namespace CookBook.Persistence
             services.AddScoped(typeof(IComponentRepository), typeof(ComponentRepository));
             services.AddScoped(typeof(IDirectionRepository), typeof(DirectionRepository));
             services.AddScoped(typeof(IIngredientsRepository), typeof(IngredientsRepository));
+            services.AddScoped(typeof(ICuisineRepository), typeof(CuisineRepository));
             return services;
         }
     }
