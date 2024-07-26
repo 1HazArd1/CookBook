@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookbook.R
 import com.example.cookbook.models.Cuisine
@@ -63,24 +64,8 @@ class HomeFragment : Fragment() {
             activity?.finish()
         }
 
-        val gridLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL,false)
-        cuisineRecyclerView?.layoutManager = gridLayoutManager
-
-        cuisineList = ArrayList()
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/chinese.png?alt=media&token=3776c5d9-4df1-41a4-92a4-0bea1a622cc8","Chinese"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/indian.png?alt=media&token=554408a2-88a7-4f2e-9754-8fcaa1256f24","Indian"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/italian.png?alt=media&token=f7493366-06fb-4681-885c-e3664734734f","Italian"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/french.png?alt=media&token=8f678538-bba5-423e-a0d5-95a464a07789","French"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/japanese.png?alt=media&token=8e769e51-b541-48e3-b2f5-a2ac304045ca","Japanese"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/korean.png?alt=media&token=efa97da0-5527-4fb0-89e1-33531366aff8","Korean"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/malaysian.png?alt=media&token=aee2d45d-fc77-4ef7-b739-ea7fa8bf8028","Malaysian"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/mexican.png?alt=media&token=88a83b46-1447-4e69-a86a-4915248da034","Mexican"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/nepali.png?alt=media&token=e1a239ea-36de-4758-a2ed-0cf2b52bcc37","Nepali"))
-        cuisineList.add(Cuisine("https://firebasestorage.googleapis.com/v0/b/demoproject-d7987.appspot.com/o/thailand.png?alt=media&token=b9750c39-4565-47ae-b6f8-851613379b8c","Thai"))
-
-        cuisineAdapter = CuisineAdapter(cuisineList)
-        cuisineRecyclerView?.adapter = cuisineAdapter
-
+        //Get all cuisines
+        getAllCuisines()
         //Get all recipes current user + existing
         getAllRecipes()
 
@@ -92,13 +77,54 @@ class HomeFragment : Fragment() {
         return retrofitService.retrofit.create(HomeApiInterface ::class.java)
     }
 
+    private fun getAllCuisines(){
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED){
+                val retrofitClient  = getRetrofitClient()
+                Log.d(TAG, "Calling Cuisine API")
+                val response = try{
+                    Log.d(TAG,"Trying to get cuisines")
+                    retrofitClient.getAllCuisine()
+                }
+                catch (e : IOException){
+                    Log.e(TAG,"I/O Exception ${e.message}")
+                    return@repeatOnLifecycle
+                }
+                catch (e : HttpException){
+                    Log.e(TAG, "Http Exception ${e.message}")
+                    return@repeatOnLifecycle
+                }
+                catch (e : Exception){
+                    Log.e(TAG,"Exception ${e.message}")
+                    return@repeatOnLifecycle
+                }
+                Log.d(TAG, response.body().toString())
+                when{
+                    response.isSuccessful && response.body() != null -> {
+                        withContext(Dispatchers.Main) {
+                            //successfully fetched api and received the response
+                            Log.d(TAG, "Response Received")
+                            val cuisines = response.body()!!
+                            if(cuisines.isNotEmpty()){
+                                val cuisineAdapter = CuisineAdapter(cuisines)
+                                val gridLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL,false)
+                                cuisineRecyclerView?.layoutManager = gridLayoutManager
+                                cuisineRecyclerView?.adapter = cuisineAdapter
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private fun getAllRecipes(){
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED){
                 val retrofitClient = getRetrofitClient()
                 Log.d(TAG, "Calling Recipe API")
                 val response = try{
-                    Log.d(TAG,"Trying to get response")
+                    Log.d(TAG,"Trying to get recipes")
                     retrofitClient.getAllRecipe()
                 }
                 catch (e : IOException){
@@ -119,12 +145,13 @@ class HomeFragment : Fragment() {
                         withContext(Dispatchers.Main) {
                             //successfully fetched api and received the response
                             Log.d(TAG, "Response Received")
-                            val list = response.body()!!
-                            if(list.isNotEmpty()){
+                            val recipes = response.body()!!
+                            if(recipes.isNotEmpty()){
                                 //show all the recipes
                                 noRecipeTextView?.visibility = View.GONE
                                 recipeRecyclerView?.visibility = View.VISIBLE
-                                val recipeAdapter = RecipeAdapter(response.body())
+                                val recipeAdapter = RecipeAdapter(recipes)
+                                recipeRecyclerView?.layoutManager = LinearLayoutManager(requireContext())
                                 recipeRecyclerView?.adapter = recipeAdapter
                             }
                             else{

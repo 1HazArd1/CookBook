@@ -13,6 +13,11 @@ namespace CookBook.Services.Controllers
         {
             this.mediator = mediator;
         }
+        [HttpGet("cuisine")]
+        public async Task<List<Cuisine>> GetAllCuisine()
+        {
+            return await mediator.Send(new GetAllCuisineQuery());
+        }
 
         [HttpGet("recipe")]
         public async Task<List<Recipe>> GetAllRecipe()

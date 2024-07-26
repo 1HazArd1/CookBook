@@ -11,7 +11,7 @@ import com.example.cookbook.models.Cuisine
 import com.squareup.picasso.Picasso
 
 class CuisineAdapter(
-    private val cuisines: ArrayList<Cuisine>
+    private val cuisines: List<Cuisine>
 ) : RecyclerView.Adapter<CuisineAdapter.CuisineViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -26,8 +26,8 @@ class CuisineAdapter(
     }
 
     override fun onBindViewHolder(holder: CuisineViewHolder, position: Int) {
-        holder.cuisine.text = cuisines[position].cuisine
-        Picasso.get().load(cuisines[position].url).into(holder.cuisineImage)
+        holder.cuisine.text = cuisines[position].cuisineName
+        Picasso.get().load(cuisines[position].cuisineUrl).into(holder.cuisineImage)
     }
 
     override fun getItemCount(): Int {
