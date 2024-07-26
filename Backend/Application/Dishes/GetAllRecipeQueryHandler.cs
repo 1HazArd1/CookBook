@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CookBook.Application.Dishes
 {
-    public record GetAllRecipeQuery() : IRequest<List<Recipe>>;
+    public record GetAllRecipeQuery(String? SearchText) : IRequest<List<Recipe>>;
 
     public class GetAllRecipeQueryHandler : IRequestHandler<GetAllRecipeQuery, List<Recipe>>
     {
@@ -37,6 +37,12 @@ namespace CookBook.Application.Dishes
                                        IsEditable = x.UserId == loggedInUser.UserId
                                    }).ToListAsync(cancellationToken);
 
+
+            if (!string.IsNullOrWhiteSpace(request.SearchText))
+            {
+                string searchText = request.SearchText.Trim();
+                recipes = recipes.Where(x => x.Name.Equals(request.SearchText,StringComparison.OrdinalIgnoreCase)).ToList();
+            }
             return recipes;
         }
     }

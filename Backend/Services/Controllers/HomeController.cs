@@ -19,10 +19,10 @@ namespace CookBook.Services.Controllers
             return await mediator.Send(new GetAllCuisineQuery());
         }
 
-        [HttpGet("recipe")]
-        public async Task<List<Recipe>> GetAllRecipe()
+        [HttpPost("recipe")]
+        public async Task<List<Recipe>> GetAllRecipe([FromBody]GetAllRecipeQuery recipeQuery)
         {
-            return await mediator.Send(new GetAllRecipeQuery());
+            return await mediator.Send(recipeQuery);
         }
 
         [HttpGet("recipe/{id}/ingredients")]

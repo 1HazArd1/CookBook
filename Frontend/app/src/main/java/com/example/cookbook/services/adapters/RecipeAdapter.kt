@@ -26,11 +26,18 @@ class RecipeAdapter(
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = recipes?.get(position)
 
+        val recipeDuration = recipe?.duration.toString() + " " +"mins"
+        val servings = recipe?.servings.let {
+            if (it?.toInt() == 0) "" else "$it people"
+        }
+
+
         Picasso.get().load(recipe?.recipeUrl).into(holder.recipeImage)
         holder.recipeName.text = recipe?.name
         holder.cuisine.text = recipe?.cuisine
-        holder.duration.text = recipe?.duration.toString()
-        holder.servings.text = recipe?.servings.toString()
+        holder.duration.text = recipeDuration
+        holder.servings.text = servings
+        holder.seperator.text = if (servings.isNotEmpty()) "." else ""
     }
 
     override fun getItemCount(): Int {
@@ -40,9 +47,10 @@ class RecipeAdapter(
     class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var recipeImage: ImageView = itemView.findViewById(R.id.iv_recipe)
         var recipeName: TextView = itemView.findViewById(R.id.tv_recipe)
-        var cuisine: TextView = itemView.findViewById(R.id.tv_cuisine)
+        var cuisine: TextView = itemView.findViewById(R.id.tv_recipeCuisine)
         var duration: TextView = itemView.findViewById(R.id.tv_duration)
         var servings: TextView = itemView.findViewById(R.id.tv_servings)
+        var seperator : TextView = itemView.findViewById(R.id.tv_seperator)
     }
 
 }
