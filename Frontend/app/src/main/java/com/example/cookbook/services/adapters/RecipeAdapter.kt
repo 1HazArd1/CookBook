@@ -32,7 +32,7 @@ class RecipeAdapter(
         }
 
 
-        Picasso.get().load(recipe?.recipeUrl).into(holder.recipeImage)
+//        Picasso.get().load(recipe?.recipeUrl).into(holder.recipeImage)
         holder.recipeName.text = recipe?.name
         holder.cuisine.text = recipe?.cuisine
         holder.duration.text = recipeDuration

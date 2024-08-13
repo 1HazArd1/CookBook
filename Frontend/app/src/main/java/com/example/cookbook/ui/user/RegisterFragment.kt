@@ -50,20 +50,21 @@ class RegisterFragment : Fragment() {
 
         btnRegister?.setOnClickListener {
 
-            val user = User(
-                firstName = firstName?.text.toString().trim(),
-                lastName = if (lastName?.text.toString()
-                        .isEmpty()
-                ) null else lastName?.text.toString().trim(),
-                email = registerEmail?.text.toString().trim(),
-                password = registerPassword?.text.toString().trim()
-            )
-            Log.d(TAG, "User: $user")
+            if (verifyUserData()) {
+                val user = User(
+                    firstName = firstName?.text.toString().trim(),
+                    lastName = if (lastName?.text.toString()
+                            .isEmpty()
+                    ) null else lastName?.text.toString().trim(),
+                    email = registerEmail?.text.toString().trim(),
+                    password = registerPassword?.text.toString().trim()
+                )
+                Log.d(TAG, "User: $user")
 
-            lifecycleScope.launch {
-                lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                lifecycleScope.launch {
+                    lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
 
-                    if (verifyUserData()) {
+
                         val retrofitService = RetrofitService(requireContext())
                         val retrofitClient =
                             retrofitService.retrofit.create(UserApiInterface::class.java)

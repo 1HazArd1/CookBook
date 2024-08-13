@@ -1,5 +1,4 @@
 ﻿using CookBook.Application.Common.Models;
-using CookBook.Application.Interface.Auth;
 using CookBook.Application.Interface.Persistence.Dishes;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

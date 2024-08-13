@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -22,6 +23,7 @@ import com.example.cookbook.services.adapters.RecipeAdapter
 import com.example.cookbook.services.apiInterfaces.HomeApiInterface
 import com.example.cookbook.services.apiService.RetrofitService
 import com.example.cookbook.services.sharedPreference.PreferenceManager
+import com.example.cookbook.ui.createRecipe.CreateRecipeActivity
 import com.example.cookbook.ui.user.UserActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -39,10 +41,12 @@ class HomeFragment : Fragment() {
     private var itemView: View? = null
     private var btnLogout: Button? = null
     private var searchView: androidx.appcompat.widget.SearchView? = null
+    private var noRecipeTextView: TextView? = null
+    private var btnCreateRecipe : ImageButton? = null
 
     private var cuisineRecyclerView: RecyclerView? = null
     private var recipeRecyclerView: RecyclerView? = null
-    private var noRecipeTextView: TextView? = null
+
     private var isSearchCall: Int = 0  // 0 -> load up all recipe call 1 -> search recipe call
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,10 +56,12 @@ class HomeFragment : Fragment() {
 
         btnLogout = itemView?.findViewById(R.id.btn_logout)
         searchView = itemView?.findViewById(R.id.sv_recipes)
+        noRecipeTextView = itemView?.findViewById(R.id.tv_noRecipe)
+        btnCreateRecipe = itemView?.findViewById(R.id.btn_createRecipe)
 
         cuisineRecyclerView = itemView?.findViewById(R.id.rv_cuisines)
         recipeRecyclerView = itemView?.findViewById(R.id.rv_recipes)
-        noRecipeTextView = itemView?.findViewById(R.id.tv_noRecipe)
+
 
         btnLogout?.setOnClickListener {
             //clear jwt token and then navigate to login
@@ -71,6 +77,7 @@ class HomeFragment : Fragment() {
         //Get all cuisines
         getAllCuisines()
 
+        //search based on recipe
         searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -88,6 +95,14 @@ class HomeFragment : Fragment() {
         //Get all recipes current user + existing
         isSearchCall = 0
         getRecipes(SearchRecipeText(""), isSearchCall)
+
+        Log.d(TAG, "Going to recipe fragment")
+        btnCreateRecipe?.setOnClickListener{
+            activity?.let {
+                val intent = Intent(context, CreateRecipeActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
 
         return itemView
@@ -176,9 +191,9 @@ class HomeFragment : Fragment() {
                             Log.d(TAG, "Response Received")
                             val recipes = response.body()!!
                             if (recipes.isEmpty() && isSearchCall == 1) {
-                                val emptyrecipeCallText = "No Recipes found for the search text"
+                                val emptyRecipeCallText = "No Recipes found for the search text"
                                 noRecipeTextView?.visibility = View.VISIBLE
-                                noRecipeTextView?.text = emptyrecipeCallText
+                                noRecipeTextView?.text = emptyRecipeCallText
                                 recipeRecyclerView?.visibility = View.GONE
                             }
                             if (recipes.isNotEmpty()) {
