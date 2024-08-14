@@ -41,7 +41,7 @@ namespace CookBook.Application.Dishes
             if (!string.IsNullOrWhiteSpace(request.SearchText))
             {
                 string searchText = request.SearchText.Trim();
-                recipes = recipes.Where(x => x.Name.Equals(request.SearchText,StringComparison.OrdinalIgnoreCase)).ToList();
+                recipes = recipes.Where(x => x.Name.Contains(request.SearchText,StringComparison.OrdinalIgnoreCase)).ToList();
             }
             return recipes;
         }

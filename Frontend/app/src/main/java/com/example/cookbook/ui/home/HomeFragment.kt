@@ -47,7 +47,9 @@ class HomeFragment : Fragment() {
     private var cuisineRecyclerView: RecyclerView? = null
     private var recipeRecyclerView: RecyclerView? = null
 
-    private var isSearchCall: Int = 0  // 0 -> load up all recipe call 1 -> search recipe call
+    private var isSearchCall: Int = 0
+    // 0 -> load up all recipe call
+    // 1 -> search for the search input parameter in the recipe call
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -190,12 +192,14 @@ class HomeFragment : Fragment() {
                             //successfully fetched api and received the response
                             Log.d(TAG, "Response Received")
                             val recipes = response.body()!!
+                            //when the search contains no desired result for the search item
                             if (recipes.isEmpty() && isSearchCall == 1) {
                                 val emptyRecipeCallText = "No Recipes found for the search text"
                                 noRecipeTextView?.visibility = View.VISIBLE
                                 noRecipeTextView?.text = emptyRecipeCallText
                                 recipeRecyclerView?.visibility = View.GONE
                             }
+                            // show the pre added and user recipes
                             if (recipes.isNotEmpty()) {
                                 //show all the recipes
                                 noRecipeTextView?.visibility = View.GONE
@@ -205,8 +209,8 @@ class HomeFragment : Fragment() {
                                     LinearLayoutManager(requireContext())
                                 recipeRecyclerView?.adapter = recipeAdapter
                             }
+                            // in case there are no existing recipes. No recipe has been added show the default no recipe text
                             if (recipes.isEmpty() && isSearchCall == 0) {
-                                // in case no recipes has been added  show the default text
                                 noRecipeTextView?.visibility = View.VISIBLE
                                 recipeRecyclerView?.visibility = View.GONE
                             }
