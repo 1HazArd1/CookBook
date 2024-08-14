@@ -86,9 +86,10 @@ class LoginFragment: Fragment() {
                             withContext(Dispatchers.Main) {
                                 //login successful and auth token received
                                 val authToken = response.body()?.accessToken
+                                val userId = response.body()?.userId.toString()
                                 Log.d(TAG,"JWT Token: $authToken")
                                 if(!authToken.isNullOrEmpty())
-                                    saveAuthToken(authToken)
+                                    saveAuthToken(authToken, userId)
 
                                 else {
                                     Log.e(TAG, "Token not found in response")
@@ -126,10 +127,10 @@ class LoginFragment: Fragment() {
 
         return itemView
     }
-    private fun saveAuthToken(authToken: String){
+    private fun saveAuthToken(authToken: String, userId: String){
         context?.let {
             val preferenceManager= PreferenceManager(it)
-            preferenceManager.saveToken(authToken)
+            preferenceManager.saveToken(authToken, userId)
         }
     }
 }

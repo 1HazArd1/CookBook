@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/ll_userMain"
+    android:id="@+id/ll_createRecipeMain"
     android:orientation="vertical"
-    tools:context=".ui.user.UserActivity">
+    tools:context=".ui.createRecipe.CreateRecipeActivity">
 
     <FrameLayout
-        android:id="@+id/fl_loginFragment_container"
+        android:id="@+id/fl_createRecipe_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

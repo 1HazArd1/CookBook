@@ -17,6 +17,7 @@ gsonVersion = "2.11.0"
 lifecycleRuntimeAndroid = "2.8.2"
 googleGmsGoogleServices = "4.4.2"
 firebaseStorage = "21.0.0"
+firebaseFirestoreKtx = "25.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +35,7 @@ retrofit = { group = "com.squareup.retrofit2", name ="retrofit", version.ref = "
 gsonConverter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gsonVersion" }
 androidx-lifecycle-runtime-android = { group = "androidx.lifecycle", name = "lifecycle-runtime-android", version.ref = "lifecycleRuntimeAndroid" }
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -14,8 +14,8 @@ class AuthInterceptor(private val preferenceManager: PreferenceManager) : Interc
         }
 
         val modifiedRequest = originalRequest.newBuilder()
-            .addHeader("Authorization", "Bearer $token")
-            .build()
+                             .addHeader("Authorization", "Bearer $token")
+                             .build()
 
         return chain.proceed(modifiedRequest)
     }
