@@ -89,6 +89,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                isSearchCall = 1
                 getRecipes(SearchRecipeText(newText), isSearchCall)
                 return true
             }
