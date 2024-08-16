@@ -16,6 +16,11 @@
 		i. User with the provided email does not exist (01): "BE010201"
 		ii. Incorrect Password (02): "BE010202"
 
-2. HomeController (02)
+2. RecipeController (02)
 	a. CreateUserRecipeCommandHandler (01) :
 		i. Recipe already exist (01): "BE020101"
+	b. CreateRecipeInstructionsCommandHandler (02) :
+		i. Recipe does not exist (01): "BE020201"
+	c. CreateRecipeIngredientsCommandHandler (03)
+		i. Recipe does not exist (01): "BE020301"
+	
