@@ -19,6 +19,7 @@ namespace CookBook.Application.Dishes.Commands
             RuleFor(x => x.RecipeInstructions)
                     .Must(instructions => instructions.Select(y => y.Component.ToLower().Trim()).Distinct().Count() == instructions.Count)
                     .WithMessage("Duplicate component names are not allowed");
+            RuleFor(x => x.RecipeId).NotNull();
         }
 
     }

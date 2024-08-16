@@ -16,6 +16,7 @@ namespace CookBook.Application.Dishes.Commands
         public CreateRecipeIngredientsCommandValidator()
         {
             RuleFor(x => x.Ingredients).NotNull().NotEmpty();
+            RuleFor(x => x.RecipeId).NotNull();
         }
     }
 
