@@ -15,10 +15,9 @@ namespace CookBook.Services.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateUserRecipe([FromBody]Recipe recipe)
+        public async Task<long> CreateUserRecipe([FromBody]Recipe recipe)
         {
-            await mediator.Send(new CreateRecipeCommand(recipe));
-            return Ok();
+            return await mediator.Send(new CreateUserRecipeCommand(recipe));
         }
 
         [HttpPost("{id}/ingredients")]
