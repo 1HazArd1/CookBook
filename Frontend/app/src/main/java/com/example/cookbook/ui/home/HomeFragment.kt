@@ -99,8 +99,8 @@ class HomeFragment : Fragment() {
         isSearchCall = 0
         getRecipes(SearchRecipeText(""), isSearchCall)
 
-        Log.d(TAG, "Going to recipe fragment")
         btnCreateRecipe?.setOnClickListener{
+            Log.d(TAG, "Going to recipe fragment")
             activity?.let {
                 val intent = Intent(context, CreateRecipeActivity::class.java)
                 startActivity(intent)

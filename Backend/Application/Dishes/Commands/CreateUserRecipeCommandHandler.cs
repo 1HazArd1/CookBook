@@ -5,32 +5,34 @@ using CookBook.Application.Interface.Persistence.Dishes;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using System.Xml.Linq;
 
 namespace CookBook.Application.Dishes.Commands
 {
-    public record CreateRecipeCommand(Common.Models.Recipe Recipe) : IRequest<Unit>;
+    public record CreateUserRecipeCommand(Common.Models.Recipe Recipe) : IRequest<long>;
 
-    public class CreateRecipeCommandValidator : AbstractValidator<CreateRecipeCommand>
+    public class CreateUserRecipeCommandValidator : AbstractValidator<CreateUserRecipeCommand>
     {
-        public CreateRecipeCommandValidator() 
+        public CreateUserRecipeCommandValidator() 
         {
             RuleFor(x => x.Recipe.Name).NotNull().NotEmpty();
         }
     }
 
-    public class CreateUserRecipeCommandHandler : IRequestHandler<CreateRecipeCommand, Unit>
+    public class CreateUserRecipeCommandHandler : IRequestHandler<CreateUserRecipeCommand, long>
     {
         private readonly IRecipeRepository recipeRepository;
         private readonly IIngredientsRepository ingredientsRepository;
         private readonly ICurrentUserService currentUserService;
         private readonly IUnitOfWork unitOfWork;
-        private readonly IValidator<CreateRecipeCommand> recipeValidator;
+        private readonly IValidator<CreateUserRecipeCommand> recipeValidator;
 
         public CreateUserRecipeCommandHandler(IRecipeRepository recipeRepository,
                                               IIngredientsRepository ingredientsRepository,
                                               ICurrentUserService currentUserService,
                                               IUnitOfWork unitOfWork,
-                                              IValidator<CreateRecipeCommand> recipeValidator)
+                                              IValidator<CreateUserRecipeCommand> recipeValidator)
         {
             this.recipeRepository = recipeRepository;
             this.ingredientsRepository = ingredientsRepository;
@@ -39,7 +41,7 @@ namespace CookBook.Application.Dishes.Commands
             this.recipeValidator = recipeValidator;
         }
 
-        public async Task<Unit> Handle(CreateRecipeCommand request, CancellationToken cancellationToken)
+        public async Task<long> Handle(CreateUserRecipeCommand request, CancellationToken cancellationToken)
         {
             await recipeValidator.ValidateAndThrowAsync(request, cancellationToken);
 
@@ -52,10 +54,11 @@ namespace CookBook.Application.Dishes.Commands
             if (existingRecipe != null)
                 throw new BadRequestException("BE020101");
 
+
             Domain.Dishes.Recipe userRecipe = new()
             {
-                RecipeName = request.Recipe.Name,
-                Cuisine = request.Recipe.Cuisine,
+                RecipeName = ConvertTitleCase(request.Recipe.Name),
+                Cuisine = request.Recipe.Cuisine == null ? null : ConvertTitleCase(request.Recipe.Cuisine),
                 RecipeUrl = request.Recipe.RecipeUrl,
                 UserId = userId,
                 Duration = request.Recipe.Duration,
@@ -70,7 +73,19 @@ namespace CookBook.Application.Dishes.Commands
             await recipeRepository.AddAsync(userRecipe);
             await unitOfWork.SaveAsync();
 
-            return Unit.Value;
+            return userRecipe.RecipeId;
+
+        }
+
+        private static string ConvertTitleCase(string unformattedString)
+        {
+            // Create a TextInfo object based on the current culture.
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+
+            // Convert to title case (first letter of each word capitalized)
+            string tittleCaseString = textInfo.ToTitleCase(unformattedString.ToLower());
+
+            return tittleCaseString;
         }
 
     }

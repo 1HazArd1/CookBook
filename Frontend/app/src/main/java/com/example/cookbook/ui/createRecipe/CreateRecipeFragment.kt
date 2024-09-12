@@ -42,6 +42,18 @@ class CreateRecipeFragment : Fragment() {
     private lateinit var pickMedia: ActivityResultLauncher<PickVisualMediaRequest>
     private var imageSelectionCallback: ((Uri?) -> Unit)? = null
 
+    private lateinit var communicator: RecipeCommunicator
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if(context is RecipeCommunicator){
+            communicator = context
+        }
+        else{
+            throw RuntimeException("$context must implement RecipeCommunicator")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -80,7 +92,7 @@ class CreateRecipeFragment : Fragment() {
         etDurationHours = itemView?.findViewById(R.id.et_duration_hours)
         etDurationMins = itemView?.findViewById(R.id.et_duration_mins)
         etServings = itemView?.findViewById(R.id.et_servings)
-        btnNext = itemView?.findViewById(R.id.btn_next)
+        btnNext = itemView?.findViewById(R.id.btn_recipe_next)
         btnRecipeImage = itemView?.findViewById(R.id.btn_Recipe_Image)
 
         btnRecipeImage?.setOnClickListener {
@@ -138,7 +150,7 @@ class CreateRecipeFragment : Fragment() {
                         }
                         val recipe = Recipe(
                             id = null,
-                            name = recipeName,
+                            name = formatString(recipeName),
                             cuisine = etCuisineName?.text.toString().trim(),
                             duration = durationInHours * 60 + durationInMins,
                             servings = try {
@@ -149,10 +161,15 @@ class CreateRecipeFragment : Fragment() {
                             recipeUrl = uploadedImageUrl,
                             isEditable = null
                         )
+                        // pass the created recipe to the instruction fragment to submit
+                        communicator.passRecipeData(recipe)
+                        //replace this fragment
+                        (activity as CreateRecipeActivity).replaceFragment(CreateIngredientsFragment())
 
                         Log.d(TAG, "$recipe")
-                        val recipeId = createRecipe(recipe)
-                        Log.d(TAG,"$recipeId")
+//                        val recipeId = createRecipe(recipe)
+//                        Log.d(TAG,"$recipeId")
+
                     } catch (e: Exception) {
                         Log.e(TAG, "Something went wrong: ${e.message}")
                     }
@@ -183,50 +200,49 @@ class CreateRecipeFragment : Fragment() {
         return retrofitService.retrofit.create(RecipeApiInterface::class.java)
     }
 
-    private suspend fun createRecipe(recipe: Recipe): Long = suspendCoroutine { continuation ->
-        lifecycleScope.launch {
-            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                val retrofitClient = getRetrofitClient()
-                Log.d(TAG, "Calling recipe API")
-                val response = try {
-                    retrofitClient.createUserRecipe(recipe)
-                } catch (e: IOException) {
-                    Log.e(TAG, "I/O Exception ${e.message}")
-                    return@repeatOnLifecycle
-                } catch (e: HttpException) {
-                    Log.e(TAG, "Http Exception ${e.message}")
-                    return@repeatOnLifecycle
-                } catch (e: Exception) {
-                    Log.e(TAG, "Exception ${e.message}")
-                    return@repeatOnLifecycle
-                }
-                when {
-                    response.isSuccessful && response.body() != null -> {
-                        Log.d(TAG, "Received response")
-                        withContext(Dispatchers.Main) {
-                            val recipeId = response.body()!!
-                            Log.d(TAG, "$recipeId")
-                            continuation.resume(recipeId)
-                        }
-                    }
-
-                    response.isSuccessful && response.body() == null -> {
-                        // successfully fetched api but received null response
-                        Log.d(TAG, "Response received but with no body")
-                        continuation.resumeWithException(Exception("Response received with no body"))
-                    }
-
-                    else -> {
-                        // any other case like unauthorised response
-                        val errorResponse = response.toString()
-                        Log.e(TAG, "error : $errorResponse")
-                        continuation.resumeWithException(Exception("API error: $errorResponse"))
-                    }
-                }
-
-            }
-        }
-    }
+//    private suspend fun createRecipe(recipe: Recipe): Long = suspendCoroutine { continuation ->
+//        lifecycleScope.launch {
+//            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+//                val retrofitClient = getRetrofitClient()
+//                Log.d(TAG, "Calling recipe API")
+//                val response = try {
+//                    retrofitClient.createUserRecipe(recipe)
+//                } catch (e: IOException) {
+//                    Log.e(TAG, "I/O Exception ${e.message}")
+//                    return@repeatOnLifecycle
+//                } catch (e: HttpException) {
+//                    Log.e(TAG, "Http Exception ${e.message}")
+//                    return@repeatOnLifecycle
+//                } catch (e: Exception) {
+//                    Log.e(TAG, "Exception ${e.message}")
+//                    return@repeatOnLifecycle
+//                }
+//                when {
+//                    response.isSuccessful && response.body() != null -> {
+//                        Log.d(TAG, "Received response")
+//                        withContext(Dispatchers.Main) {
+//                            val recipeId = response.body()!!
+//                            continuation.resume(recipeId)
+//                        }
+//                    }
+//
+//                    response.isSuccessful && response.body() == null -> {
+//                        // successfully fetched api but received null response
+//                        Log.d(TAG, "Response received but with no body")
+//                        continuation.resumeWithException(Exception("Response received with no body"))
+//                    }
+//
+//                    else -> {
+//                        // any other case like unauthorised response
+//                        val errorResponse = response.toString()
+//                        Log.e(TAG, "error : $errorResponse")
+//                        continuation.resumeWithException(Exception("API error: $errorResponse"))
+//                    }
+//                }
+//
+//            }
+//        }
+//    }
 
     private suspend fun selectImageFromDevice(): Uri? = suspendCoroutine { continuation ->
         imageSelectionCallback = { uri ->
@@ -282,12 +298,17 @@ class CreateRecipeFragment : Fragment() {
 
     }
 
-
     private fun generateFileName(recipeName: String, context: Context): String {
         val preferenceManager = PreferenceManager(context)
         val userId = preferenceManager.getUserId()?.toLong()
         if (userId == 23L)
             return "recipe_admin_${recipeName}_${System.currentTimeMillis()}.jpg"
         return "recipe_user_${recipeName}_${System.currentTimeMillis()}.jpg"
+    }
+
+    private fun formatString(input: String): String {
+        return input.lowercase()
+            .split(" ") // Split by spaces
+            .joinToString(" ") { it.replaceFirstChar { char -> char.uppercase() } }
     }
 }
